@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprehensive CIS Framework Security Checklist</title>
+    <style>
+      /* Base Styles */
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f6f9;
+          color: #333;
+          max-width: 900px;
+          margin: auto;
+          padding: 20px;
+      }
+      h1 {
+          color: #4a90e2;
+          text-align: center;
+          margin-bottom: 10px;
+      }
+      p.description {
+          text-align: center;
+          font-size: 1em;
+          color: #666;
+          margin-bottom: 20px;
+      }
+      .checklist-container {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin-bottom: 20px;
+          position: relative;
+      }
+      .checklist-item {
+          display: flex;
+          align-items: center;
+          margin: 15px 0;
+          position: relative;
+      }
+      .checklist-item input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          margin-right: 15px;
+      }
+      .checklist-item label {
+          font-size: 1.1em;
+          flex-grow: 1;
+          cursor: pointer;
+      }
+      .sub-checklist {
+          margin-left: 35px;
+          display: none;
+          font-size: 0.95em;
+          padding-left: 20px;
+          border-left: 2px solid #4a90e2;
+      }
+      .sub-checklist-item {
+          margin: 10px 0;
+          display: flex;
+          align-items: center;
+      }
+      .sub-checklist-item input[type="checkbox"] {
+          margin-right: 10px;
+          width: 16px;
+          height: 16px;
+      }
+      .progress-bar-container {
+          background-color: #e0e0e0;
+          border-radius: 8px;
+          overflow: hidden;
+          margin-top: 20px;
+      }
+      .progress-bar {
+          height: 20px;
+          background-color: #28a745;
+          width: 0;
+          transition: width 0.3s ease;
+      }
+      .progress-text {
+          text-align: center;
+          font-size: 0.9em;
+          margin-top: 10px;
+          color: #555;
+      }
+      .download-btn {
+          background-color: #4a90e2;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1em;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comprehensive CIS Framework Security Checklist</h1>
+    <p class="description">
+      This checklist is designed to help small and medium-sized businesses
+      improve their cybersecurity posture by implementing CIS Controls. By
+      following these detailed steps, you can systematically protect your
+      assets, manage vulnerabilities, and respond effectively to security
+      incidents.
+    </p>
+
+    <!-- Main Checklist Container -->
+    <div id="checklistContent" class="checklist-container">
+      <!-- Inventory and Control of Hardware Assets -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item1"
+          onclick="toggleSubChecklist(1); updateProgress()"
+        />
+        <label for="item1">1. Inventory and Control of Hardware Assets</label>
+      </div>
+      <div class="sub-checklist" id="subChecklist1">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Identify and document all devices connected to the network,
+            including IP addresses and MAC addresses.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Assign an owner and responsible personnel for each device.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Implement access controls to ensure only authorized devices can
+            connect.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Perform quarterly physical audits to verify device presence and
+            compliance.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Establish an approval process for adding new devices to the
+            network.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Use MAC address filtering to prevent unauthorized device
+            access.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Maintain a record of device configurations for quick restoration if
+            needed.</label
+          >
+        </div>
+      </div>
+
+      <!-- Inventory and Control of Software Assets -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item2"
+          onclick="toggleSubChecklist(2); updateProgress()"
+        />
+        <label for="item2">2. Inventory and Control of Software Assets</label>
+      </div>
+      <div class="sub-checklist" id="subChecklist2">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Maintain a list of authorized software, noting version numbers and
+            license details.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Implement software inventory tools to detect unauthorized software
+            installations.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Set policies for software use, identifying approved and restricted
+            applications.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Update all software regularly, prioritizing security patches for
+            critical applications.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label>Remove outdated or unsupported software promptly.</label>
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Use application whitelisting to restrict unauthorized software from
+            running.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Implement a periodic review of all software licenses and
+            compliance.</label
+          >
+        </div>
+      </div>
+
+      <!-- Continuous Vulnerability Management -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item3"
+          onclick="toggleSubChecklist(3); updateProgress()"
+        />
+        <label for="item3">3. Continuous Vulnerability Management</label>
+      </div>
+      <div class="sub-checklist" id="subChecklist3">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Schedule weekly vulnerability scans for high-risk systems.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Use a vulnerability management tool to track and prioritize
+            vulnerabilities.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Develop a patch management policy to address vulnerabilities
+            promptly.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Establish timelines for remediating vulnerabilities based on risk
+            level.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Maintain logs of vulnerabilities found, remediation actions, and
+            timelines.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Set up alerts to monitor newly discovered vulnerabilities affecting
+            critical systems.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Conduct vulnerability assessments on any new assets before
+            deployment.</label
+          >
+        </div>
+      </div>
+
+      <!-- Controlled Use of Administrative Privileges -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item4"
+          onclick="toggleSubChecklist(4); updateProgress()"
+        />
+        <label for="item4"
+          >4. Controlled Use of Administrative Privileges</label
+        >
+      </div>
+      <div class="sub-checklist" id="subChecklist4">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label>Limit admin privileges to only essential personnel.</label>
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Enable multi-factor authentication (MFA) for admin accounts.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Log and monitor all administrative actions for suspicious
+            activity.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Establish a secure process for resetting and recovering admin
+            passwords.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Perform regular audits to review and revoke unnecessary admin
+            access.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Restrict admin accounts from accessing non-critical systems.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Use separate accounts for administrative and non-administrative
+            tasks.</label
+          >
+        </div>
+      </div>
+
+      <!-- Secure Configuration for Hardware and Software -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item5"
+          onclick="toggleSubChecklist(5); updateProgress()"
+        />
+        <label for="item5"
+          >5. Secure Configuration for Hardware and Software</label
+        >
+      </div>
+      <div class="sub-checklist" id="subChecklist5">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Establish baseline security configurations for all devices.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Disable all unused services, ports, and default accounts on
+            devices.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Regularly review device configurations to ensure compliance.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Deploy automated configuration management tools to detect
+            unauthorized changes.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Set secure settings for all major applications and services.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Implement logging for configuration changes to critical
+            systems.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Ensure all firmware and BIOS settings align with security
+            standards.</label
+          >
+        </div>
+      </div>
+
+      <!-- Security Awareness and Training -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item6"
+          onclick="toggleSubChecklist(6); updateProgress()"
+        />
+        <label for="item6">6. Security Awareness and Training</label>
+      </div>
+      <div class="sub-checklist" id="subChecklist6">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Develop a security awareness program covering phishing, social
+            engineering, and password management.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Conduct regular phishing simulations to assess employee
+            awareness.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Train employees on recognizing and responding to cybersecurity
+            threats.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Encourage employees to report any suspicious emails or
+            activities.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Update training content periodically to reflect the latest threats
+            and best practices.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Provide specific training on handling sensitive and customer
+            data.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Offer rewards or recognition to employees who consistently follow
+            security protocols.</label
+          >
+        </div>
+      </div>
+
+      <!-- Incident Response and Data Recovery -->
+      <div class="checklist-item">
+        <input
+          type="checkbox"
+          id="item7"
+          onclick="toggleSubChecklist(7); updateProgress()"
+        />
+        <label for="item7">7. Incident Response and Data Recovery</label>
+      </div>
+      <div class="sub-checklist" id="subChecklist7">
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label>Establish a comprehensive incident response plan.</label>
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Implement a data backup strategy with regular automated
+            backups.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Test data recovery plans quarterly to ensure effectiveness.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Maintain off-site or cloud backups for critical business
+            data.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Develop a communication plan for notifying stakeholders during
+            incidents.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Establish protocols for tracking and documenting incidents and
+            responses.</label
+          >
+        </div>
+        <div class="sub-checklist-item">
+          <input type="checkbox" onclick="updateProgress()" />
+          <label
+            >Train employees on incident response protocols and chain of
+            command.</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p class="progress-text" id="progressText">Progress: 0%</p>
+
+    <!-- Download Report Button -->
+    <button class="download-btn" onclick="downloadReport()">
+      Download Report
+    </button>
+
+    <!-- Libraries for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script>
+      // Toggle Sub-Checklist Function
+      function toggleSubChecklist(itemNumber) {
+          const subChecklist = document.getElementById(`subChecklist${itemNumber}`);
+          const mainCheckbox = document.getElementById(`item${itemNumber}`);
+          if (mainCheckbox.checked) {
+              subChecklist.style.display = 'block';
+          } else {
+              subChecklist.style.display = 'none';
+              subChecklist.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+          }
+          updateProgress();
+      }
+
+      // Update Progress Function
+      function updateProgress() {
+          const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+          const totalCheckboxes = allCheckboxes.length;
+          let checkedCount = 0;
+
+          allCheckboxes.forEach(checkbox => {
+              if (checkbox.checked) checkedCount++;
+          });
+
+          // Calculate and update progress
+          const progressPercentage = Math.floor((checkedCount / totalCheckboxes) * 100);
+          document.getElementById('progressBar').style.width = `${progressPercentage}%`;
+          document.getElementById('progressText').textContent = `Progress: ${progressPercentage}%`;
+      }
+
+      // Download Report Function with Multiple Pages Support
+      async function downloadReport() {
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF("p", "pt", "a4");
+          const checklistContent = document.getElementById('checklistContent');
+          const progressText = document.getElementById('progressText').textContent;
+
+          const margin = 20;
+          const pageHeight = pdf.internal.pageSize.height;
+          const options = { scale: 2, background: '#fff' };
+
+          // Capture each visible section individually to handle multi-page PDF
+          let position = 0;
+          for (let i = 0; i < checklistContent.children.length; i++) {
+              const section = checklistContent.children[i];
+              await html2canvas(section, options).then((canvas) => {
+                  const imgData = canvas.toDataURL("image/png");
+                  const imgWidth = pdf.internal.pageSize.width - margin * 2;
+                  const imgHeight = canvas.height * imgWidth / canvas.width;
+
+                  // Add image and create new page if content overflows
+                  if (position + imgHeight > pageHeight - margin * 2) {
+                      pdf.addPage();
+                      position = 0;
+                  }
+                  pdf.addImage(imgData, 'PNG', margin, position + margin, imgWidth, imgHeight);
+                  position += imgHeight;
+              });
+          }
+
+          // Add the progress summary on the last page
+          if (position + 30 > pageHeight) {
+              pdf.addPage();
+              position = margin;
+          }
+          pdf.setFontSize(12);
+          pdf.text(`Checklist Progress Report`, pdf.internal.pageSize.width / 2, position + 30, { align: "center" });
+          pdf.text(`Progress: ${progressText}`, pdf.internal.pageSize.width / 2, position + 50, { align: "center" });
+
+          // Save PDF
+          pdf.save('CIS_Checklist_Report.pdf');
+      }
+    </script>
+  </body>
+</html>
